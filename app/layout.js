@@ -1,7 +1,9 @@
-import { Inter } from "next/font/google";
+import { PT_Sans, Nunito } from "next/font/google";
 import "./globals.css";
+import Navigation from "@/components/Navigation";
 
-const inter = Inter({ subsets: ["latin"] });
+const ptSans = PT_Sans({ subsets: ["latin"], weight: ["700", "400"] });
+const nunito = Nunito({ subsets: ["latin"], variable: "--font-nunito" });
 
 export const metadata = {
   title: "Create Next App",
@@ -10,8 +12,13 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className={`${ptSans.className} ${nunito.variable}`}>
+      <body className="bg-light text-lg">
+        <header>
+          <Navigation />
+        </header>
+        {children}
+      </body>
     </html>
   );
 }

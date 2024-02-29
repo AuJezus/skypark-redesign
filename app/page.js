@@ -1,113 +1,137 @@
+import Subheading from "@/components/Subheading";
 import Image from "next/image";
+import {
+  BiCurrentLocation,
+  BiMailSend,
+  BiPhone,
+  BiRightArrowAlt,
+} from "react-icons/bi";
+import Heading2 from "@/components/Heading";
+
+import parkImage1 from "@/public/parkas1.jpg";
+import parkImage2 from "@/public/parkas2.jpg";
+import parkImage3 from "@/public/parkas3.jpg";
+import kambarys from "@/public/kambarys.jpg";
+import Button from "@/components/Button";
+import BackdropImage from "@/components/BackdropImage";
+import TestimonialSlide from "@/components/TestimonialSlide";
+import CardTitle from "@/components/CardTitle";
+
+const parks = [
+  {
+    name: "skypark vilnius outlet",
+    address: "Vytauto Pociūno g. 8, 3 aukštas",
+    email: "voutlet@skypark.lt",
+    phone: "8 615 27999",
+    image: parkImage1,
+  },
+  {
+    name: "skypark ogmios miestas",
+    address: "Verkių g. 29B, Ogmios miestas",
+    email: "vilnius@skypark.lt",
+    phone: "8 613 97001",
+    image: parkImage2,
+  },
+  {
+    name: "skypark klaipėda",
+    address: "Taikos pr. 141, BIG 2, Klaipėda",
+    email: "klaipeda@skypark.lt",
+    phone: "8 686 81172 ",
+    image: parkImage3,
+  },
+];
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div className="">
+      {/* Hero section */}
+      <div className="flex h-screen items-center px-3">
+        <div>
+          <Subheading>skypark</Subheading>
+          <h1 className="mt-2 font-nunito text-5xl font-bold capitalize">
+            Didžiausias batutų centras visoje Europoje!
+          </h1>
         </div>
       </div>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+      {/* Parks section */}
+      <div className="mb-28 px-3">
+        <div className="mb-8">
+          <Subheading>parkai</Subheading>
+          <Heading2>Mus galite rasti</Heading2>
+        </div>
+
+        <div className="grid justify-center gap-10">
+          {parks.map((park) => (
+            <div
+              key={park.name}
+              className="flex w-[350px] flex-col overflow-hidden rounded-3xl border-[5px] border-primary"
+            >
+              <Image
+                className="h-[250px] w-full object-cover"
+                src={park.image}
+                alt={park.name}
+              />
+              <div className="my-6 flex flex-col gap-6 px-3">
+                <CardTitle>{park.name}</CardTitle>
+                <div className="flex items-center gap-2">
+                  <BiCurrentLocation />
+                  <p>{park.address}</p>
+                </div>
+                <div className="flex items-center gap-2">
+                  <BiMailSend />
+                  <p>{park.email}</p>
+                </div>
+                <div className="flex items-center gap-2">
+                  <BiPhone />
+                  <p>{park.phone}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+      {/* Events section */}
+      <div className="mb-28 px-3">
+        <div className="mb-8">
+          <Subheading>šventės</Subheading>
+          <Heading2>Šventes šveskime kartu!</Heading2>
+        </div>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+        <div className="mb-6">
+          <BackdropImage src={kambarys} />
+        </div>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
+        <div className="flex flex-col items-start gap-6">
+          <p>
+            Šiaurės miestelyje įsikūrusiame Skypark Jūsų laukia trylika
+            skirtingų temų šventinių kambarių. Skypark’e kiekvienas suras sau
+            tinkamą šventės vietą, nuo pačių mažiausių iki suaugusių.
           </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
+          <p>
+            Prekybos centre Vilnius Outlet (Pilaitėje) įsikūrusiame Skypark Jūsų
+            laukia net šešiolika šventinių kambarių. Skypark’e kiekvienas suras
+            sau tinkamą šventės vietą, nuo pačių mažiausių iki suaugusių.
           </p>
-        </a>
+          <Button>
+            <Subheading>Daugiau</Subheading>
+            <BiRightArrowAlt />
+          </Button>
+        </div>
       </div>
-    </main>
+
+      {/* Testimonial section */}
+      <div className="mb-28">
+        <div className="mb-8 px-3">
+          <Subheading>šventės</Subheading>
+          <Heading2>Šventes šveskime kartu!</Heading2>
+        </div>
+
+        <div className="flex justify-center overflow-x-hidden">
+          <TestimonialSlide />
+        </div>
+      </div>
+    </div>
   );
 }
