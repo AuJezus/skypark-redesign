@@ -11,12 +11,14 @@ import Button from "@/components/Button";
 import BackdropImage from "@/components/BackdropImage";
 import TestimonialSlide from "@/components/TestimonialSlide";
 import CardTitle from "@/components/CardTitle";
+import { useForm, ValidationError } from "@formspree/react";
 
 import parkImage1 from "@/public/parkas1.jpg";
 import parkImage2 from "@/public/parkas2.jpg";
 import parkImage3 from "@/public/parkas3.jpg";
 import kambarys from "@/public/kambarys.jpg";
 import contactUsImage from "@/public/contact-us.png";
+import ContactForm from "@/components/ContactForm";
 
 const parks = [
   {
@@ -141,26 +143,9 @@ export default function Home() {
           <Heading2>Susisiekite su mumis</Heading2>
         </div>
 
-        <form className="mb-16 flex flex-col gap-8">
-          <input
-            type="text"
-            placeholder="Vardas"
-            className="text w-full rounded-xl bg-primary/20 px-4 py-2 transition-all placeholder:text-dark/50"
-          />
-          <input
-            type="email"
-            placeholder="El. Paštas"
-            className="text w-full rounded-xl bg-primary/20 px-4 py-2 transition-all placeholder:text-dark/50"
-          />
-          <textarea
-            placeholder="Žinutė..."
-            className="text h-[220px] w-full rounded-xl bg-primary/20 px-4 py-2 transition-all placeholder:text-dark/50"
-          />
-          <Button type="submit">
-            <Subheading>siųsti</Subheading>
-            <BiRightArrowAlt />
-          </Button>
-        </form>
+        <div className="mb-16">
+          <ContactForm />
+        </div>
 
         <BackdropImage src={contactUsImage} />
       </div>
