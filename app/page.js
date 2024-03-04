@@ -11,8 +11,8 @@ import Button from "@/components/Button";
 import BackdropImage from "@/components/BackdropImage";
 import TestimonialSlide from "@/components/TestimonialSlide";
 import CardTitle from "@/components/CardTitle";
-import { useForm, ValidationError } from "@formspree/react";
 
+import bubbleImage1 from "@/public/bubble1.webp";
 import parkImage1 from "@/public/parkas1.jpg";
 import parkImage2 from "@/public/parkas2.jpg";
 import parkImage3 from "@/public/parkas3.jpg";
@@ -48,12 +48,24 @@ export default function Home() {
   return (
     <div className="">
       {/* Hero section */}
-      <div className="flex h-screen items-center px-3">
+      <div className="relative mb-36 flex h-screen items-center px-3">
         <div>
           <Subheading>skypark</Subheading>
-          <h1 className="mt-2 font-nunito text-5xl font-bold capitalize">
+          <h1 className="mb-24 mt-2 font-nunito text-5xl font-bold capitalize">
             Didžiausias batutų centras visoje Europoje!
           </h1>
+        </div>
+        <div>
+          <div className="absolute -left-16 top-14 z-10 aspect-square w-[180px] rounded-full bg-[#FFA231]"></div>
+          <div className="absolute -right-12 top-16 z-10 aspect-square w-[100px] rounded-full bg-[#FF841F]"></div>
+          <div className="absolute right-24 top-40 z-10 aspect-square w-[89px] rounded-full bg-[#FF9529]"></div>
+          <div className="absolute bottom-56 left-4 z-10 aspect-square w-[93px] rounded-full bg-[#FF7d1B]"></div>
+          <Image
+            src={bubbleImage1}
+            alt="Skypark vaikų nuotrauka"
+            className="absolute -right-8 bottom-2 z-10 aspect-square w-[300px] rounded-full object-cover"
+          ></Image>
+          <div className="absolute -bottom-20 -left-20 z-10 aspect-square w-[180px] rounded-full bg-[#FF9e2f]"></div>
         </div>
       </div>
 

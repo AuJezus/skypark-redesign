@@ -7,7 +7,6 @@ import { BiRightArrowAlt } from "react-icons/bi";
 
 function ContactForm() {
   const [state, handleSubmit] = useForm("xwkgbdyn");
-  console.log(state.errors);
 
   if (state.succeeded) {
     return <p>Ačiū, mes gavome jūsų žinutę ir netrukus atsakysime ❤️</p>;
