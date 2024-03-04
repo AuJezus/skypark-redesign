@@ -1,6 +1,9 @@
-function Button({ children }) {
+function Button({ children, ...props }) {
   return (
-    <button className="bg-primary flex w-auto items-center gap-2 rounded-xl px-4 py-2">
+    <button
+      className="flex w-fit items-center gap-2 rounded-xl bg-primary px-4 py-2"
+      {...props}
+    >
       {children}
     </button>
   );
