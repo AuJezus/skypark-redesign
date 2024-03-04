@@ -4,7 +4,7 @@ import tomas from "@/public/tomas.png";
 import inga from "@/public/inga.png";
 import aliona from "@/public/aliona.png";
 import Testimonial from "./Testimonial";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 const initTestimonials = [
   {
@@ -42,6 +42,8 @@ function TestimonialSlide() {
   });
   const [isChanging, setIsChanging] = useState(false);
 
+  const touchStart = useRef(null);
+
   function moveRight() {
     setIsChanging(false);
     setCurrent((c) => c + 1);
@@ -66,10 +68,23 @@ function TestimonialSlide() {
     }
   }
 
+  function getSwipeDirection(e) {
+    const touchEnd = e.changedTouches[0].screenX;
+    const touchDistance = touchEnd - touchStart.current;
+
+    if (Math.abs(touchDistance) < 20) return;
+
+    if (touchDistance > 0) moveLeft();
+
+    if (touchDistance < 0) moveRight();
+  }
+
   return (
     <div
       className={`${isChanging ? "" : "transition-transform"} mb-6 flex w-3/4`}
       onTransitionEnd={checkIfInBounds}
+      onTouchStart={(e) => (touchStart.current = e.changedTouches[0].screenX)}
+      onTouchEnd={getSwipeDirection}
       style={{
         transform: `translateX(-${current * 100}%)`,
       }}
