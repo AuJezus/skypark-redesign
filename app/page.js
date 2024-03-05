@@ -48,7 +48,7 @@ export default function Home() {
   return (
     <div className="">
       {/* Hero section */}
-      <div className="relative mb-36 flex h-screen items-center px-3">
+      <div className="relative mb-36 flex h-screen items-center overflow-x-clip px-3">
         <div>
           <Subheading>skypark</Subheading>
           <h1 className="mb-24 mt-2 font-nunito text-5xl font-bold capitalize">
@@ -70,7 +70,7 @@ export default function Home() {
       </div>
 
       {/* Parks section */}
-      <div className="mb-28 px-3">
+      <div id="parks-section" className="mb-28 px-3">
         <div className="mb-8">
           <Subheading>parkai</Subheading>
           <Heading2>Mus galite rasti</Heading2>
@@ -108,7 +108,7 @@ export default function Home() {
       </div>
 
       {/* Events section */}
-      <div className="mb-28 px-3">
+      <div id="events-section" className="mb-28 px-3">
         <div className="mb-8">
           <Subheading>šventės</Subheading>
           <Heading2>Šventes šveskime kartu!</Heading2>
@@ -137,10 +137,10 @@ export default function Home() {
       </div>
 
       {/* Testimonial section */}
-      <div className="mb-28">
+      <div id="testimonials-section" className="mb-28">
         <div className="mb-8 px-3">
-          <Subheading>šventės</Subheading>
-          <Heading2>Šventes šveskime kartu!</Heading2>
+          <Subheading>ATSILIEPIMAI</Subheading>
+          <Heading2>Ką kiti sako apie mus</Heading2>
         </div>
 
         <div className="flex justify-center overflow-x-hidden">
@@ -149,7 +149,7 @@ export default function Home() {
       </div>
 
       {/* Contact us section */}
-      <div className="mb-16 px-3">
+      <div id="contact-us-section" className="mb-16 px-3">
         <div className="mb-8">
           <Subheading>kontaktai</Subheading>
           <Heading2>Susisiekite su mumis</Heading2>
