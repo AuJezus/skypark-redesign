@@ -17,7 +17,7 @@ function Testimonial({
 }) {
   return (
     <div
-      className={`${isCurrent ? "scale-110" : ""} flex h-full flex-col transition-transform`}
+      className={`${isCurrent ? "scale-110" : " opacity-60 md:opacity-30"} flex h-full flex-col transition-all`}
     >
       <Image
         className="relative z-20 mx-auto w-20 translate-y-1/2 rounded-full"
@@ -25,9 +25,9 @@ function Testimonial({
         alt={testimonial.name}
       />
 
-      <div className="relative flex h-full flex-col items-center gap-2 rounded-3xl bg-primary/20 p-3 pt-12">
+      <div className="relative flex h-full flex-col items-center gap-2 rounded-3xl bg-primary/20 p-3 pt-12 md:p-8 md:py-16">
         <div
-          className={`${isCurrent ? "" : "hidden"} absolute top-0 flex w-full justify-between p-3 text-2xl`}
+          className={`${isCurrent ? "" : "hidden"} absolute top-0 flex w-full justify-between p-3 text-2xl md:hidden`}
         >
           <BiLeftArrowAlt onClick={onMoveLeft} />
           <BiRightArrowAlt onClick={onMoveRight} />

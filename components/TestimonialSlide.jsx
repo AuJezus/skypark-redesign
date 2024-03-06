@@ -5,6 +5,7 @@ import inga from "@/public/inga.png";
 import aliona from "@/public/aliona.png";
 import Testimonial from "./Testimonial";
 import { useRef, useState } from "react";
+import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
 
 const initTestimonials = [
   {
@@ -80,29 +81,37 @@ function TestimonialSlide() {
   }
 
   return (
-    <div
-      className={`${isChanging ? "" : "transition-transform"} mb-6 flex w-3/4`}
-      onTransitionEnd={checkIfInBounds}
-      onTouchStart={(e) => (touchStart.current = e.changedTouches[0].screenX)}
-      onTouchEnd={getSwipeDirection}
-      style={{
-        transform: `translateX(-${current * 100}%)`,
-      }}
-    >
-      {testimonials.map((testimonial, i) => (
-        <div
-          className="flex-shrink-0 flex-grow-0 basis-full px-4"
-          key={testimonial.name + i}
-        >
-          <Testimonial
-            isCurrent={testimonial === testimonials[current]}
-            testimonial={testimonial}
-            onMoveLeft={moveLeft}
-            onMoveRight={moveRight}
-          />
-        </div>
-      ))}
-    </div>
+    <>
+      <div
+        className={`absolute top-1/2 z-50 hidden w-full justify-between px-16 text-5xl md:flex`}
+      >
+        <BiLeftArrowAlt onClick={moveLeft} />
+        <BiRightArrowAlt onClick={moveRight} />
+      </div>
+      <div
+        className={`${isChanging ? "" : "transition-transform"} mb-6 flex w-3/4 sm:w-4/6 md:w-1/2`}
+        onTransitionEnd={checkIfInBounds}
+        onTouchStart={(e) => (touchStart.current = e.changedTouches[0].screenX)}
+        onTouchEnd={getSwipeDirection}
+        style={{
+          transform: `translateX(-${current * 100}%)`,
+        }}
+      >
+        {testimonials.map((testimonial, i) => (
+          <div
+            className="flex-shrink-0 flex-grow-0 basis-full px-4 sm:px-6"
+            key={testimonial.name + i}
+          >
+            <Testimonial
+              isCurrent={testimonial === testimonials[current]}
+              testimonial={testimonial}
+              onMoveLeft={moveLeft}
+              onMoveRight={moveRight}
+            />
+          </div>
+        ))}
+      </div>
+    </>
   );
 }
 
