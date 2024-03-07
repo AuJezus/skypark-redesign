@@ -2,9 +2,9 @@ import Image from "next/image";
 
 function BackdropImage({ src }) {
   return (
-    <div className="-translate-x-2">
+    <div className="h-full -translate-x-2">
       <Image
-        className="scale-[95%] rounded-3xl"
+        className="h-full w-full scale-[95%] rounded-3xl object-cover"
         src={src}
         alt="Švenčių kambarys"
       />

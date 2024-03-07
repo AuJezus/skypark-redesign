@@ -83,13 +83,13 @@ function TestimonialSlide() {
   return (
     <>
       <div
-        className={`absolute top-1/2 z-50 hidden w-full justify-between px-16 text-5xl md:flex`}
+        className={`absolute top-1/2 z-50 hidden w-full justify-between px-16 text-5xl md:flex xl:max-w-[1000px]`}
       >
         <BiLeftArrowAlt onClick={moveLeft} />
         <BiRightArrowAlt onClick={moveRight} />
       </div>
       <div
-        className={`${isChanging ? "" : "transition-transform"} mb-6 flex w-3/4 sm:w-4/6 md:w-1/2`}
+        className={`${isChanging ? "" : "transition-transform"} mb-6 flex w-3/4 sm:w-4/6 md:w-1/2 xl:w-1/3`}
         onTransitionEnd={checkIfInBounds}
         onTouchStart={(e) => (touchStart.current = e.changedTouches[0].screenX)}
         onTouchEnd={getSwipeDirection}

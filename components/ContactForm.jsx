@@ -13,7 +13,7 @@ function ContactForm() {
   }
 
   return (
-    <div>
+    <div className="xl:pr-24">
       <form onSubmit={handleSubmit} className="flex flex-col gap-8">
         <div>
           <input

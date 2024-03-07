@@ -4,7 +4,7 @@ import { BiCurrentLocation, BiMailSend, BiPhone } from "react-icons/bi";
 
 function Footer() {
   return (
-    <div className="grid-cols-2 gap-8 bg-primary p-6 text-base md:grid md:flex-row md:px-12">
+    <div className="grid-cols-2 gap-8 bg-primary p-6 text-base md:grid md:flex-row md:px-12 lg:px-24 xl:grid-cols-4 xl:px-8">
       {parks.map((park) => (
         <div key={park.name} className="hidden flex-col gap-4 md:flex">
           <CardTitle>{park.name}</CardTitle>

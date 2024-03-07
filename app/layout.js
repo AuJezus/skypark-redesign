@@ -14,7 +14,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${ptSans.className} ${nunito.variable}`}>
-      <body className="bg-light text-lg text-dark">
+      <body className="bg-light text-lg text-dark xl:text-[20px]">
         <header>
           <Navigation />
         </header>

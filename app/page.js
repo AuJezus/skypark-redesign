@@ -48,10 +48,10 @@ export default function Home() {
   return (
     <div className="">
       {/* Hero section */}
-      <div className="relative mb-36 flex h-screen items-center overflow-x-clip px-3 md:mb-64">
-        <div className="mb-24 md:mb-0 md:ml-8 md:mt-12 md:w-2/3">
+      <div className="relative mb-36 flex h-screen items-center overflow-x-clip px-3 md:mb-64 xl:mb-28">
+        <div className="mb-24 md:mb-0 md:ml-8 md:mt-12 md:w-2/3 xl:ml-16 xl:w-1/3">
           <Subheading>skypark</Subheading>
-          <h1 className="mt-2 font-nunito text-5xl font-bold capitalize">
+          <h1 className="mt-2 font-nunito text-5xl font-bold capitalize xl:text-6xl">
             Didžiausias batutų centras visoje Europoje!
           </h1>
         </div>
@@ -59,17 +59,20 @@ export default function Home() {
       </div>
 
       {/* Parks section */}
-      <div id="parks-section" className="mb-28 px-3 md:px-12">
+      <div
+        id="parks-section"
+        className="mb-28 px-3 md:px-12 lg:mx-auto lg:max-w-4xl lg:px-0 xl:max-w-[1200px]"
+      >
         <div className="mb-8">
           <Subheading>parkai</Subheading>
           <Heading2>Mus galite rasti</Heading2>
         </div>
 
-        <div className="grid justify-center justify-items-center gap-10 md:grid-cols-2">
+        <div className="grid justify-center justify-items-center gap-10 md:grid-cols-2 xl:grid-cols-3">
           {parks.map((park, i) => (
             <div
               key={park.name}
-              className={`${i === parks.length - 1 ? "col-span-2" : ""} flex max-w-[350px] flex-col overflow-hidden rounded-3xl border-[5px] border-primary`}
+              className={`${i === parks.length - 1 ? "md:col-span-2 xl:col-span-1" : ""} flex max-w-[350px] flex-col overflow-hidden rounded-3xl border-[5px] border-primary`}
             >
               <Image
                 className="h-[250px] w-full object-cover"
@@ -97,13 +100,16 @@ export default function Home() {
       </div>
 
       {/* Events section */}
-      <div id="events-section" className="mb-28 px-3 md:px-12">
+      <div
+        id="events-section"
+        className="mb-28 px-3 md:px-12 lg:mx-auto lg:max-w-4xl lg:px-0 xl:grid xl:max-w-[1200px] xl:grid-cols-2 xl:grid-rows-[auto_1fr]"
+      >
         <div className="mb-8">
           <Subheading>šventės</Subheading>
           <Heading2>Šventes šveskime kartu!</Heading2>
         </div>
 
-        <div className="mb-6 md:w-5/6">
+        <div className="mb-6 md:w-5/6 xl:row-span-2 xl:mb-0 xl:h-[500px] xl:w-full">
           <BackdropImage src={kambarys} />
         </div>
 
@@ -126,8 +132,11 @@ export default function Home() {
       </div>
 
       {/* Testimonial section */}
-      <div id="testimonials-section" className="mb-28">
-        <div className="mb-8 px-3 md:px-12">
+      <div
+        id="testimonials-section"
+        className="mb-28 xl:mx-auto xl:max-w-[1200px]"
+      >
+        <div className="mb-8 px-3 md:px-12 lg:mx-auto lg:max-w-4xl lg:px-0">
           <Subheading>ATSILIEPIMAI</Subheading>
           <Heading2>Ką kiti sako apie mus</Heading2>
         </div>
@@ -138,17 +147,24 @@ export default function Home() {
       </div>
 
       {/* Contact us section */}
-      <div id="contact-us-section" className="mb-16 px-3 md:px-12">
+      <div
+        id="contact-us-section"
+        className="mb-16 px-3 md:px-12 lg:mx-auto lg:max-w-4xl lg:px-0 xl:max-w-[1200px]"
+      >
         <div className="mb-8">
           <Subheading>kontaktai</Subheading>
           <Heading2>Susisiekite su mumis</Heading2>
         </div>
 
-        <div className="mb-16">
-          <ContactForm />
-        </div>
+        <div className="items-center xl:flex">
+          <div className="mb-16 xl:mb-0 xl:w-full">
+            <ContactForm />
+          </div>
 
-        <BackdropImage src={contactUsImage} />
+          <div className="w-full xl:h-[600px]">
+            <BackdropImage src={contactUsImage} />
+          </div>
+        </div>
       </div>
     </div>
   );
