@@ -1,7 +1,7 @@
 # Redesign of SKYPARK trampoline park website
 [Live example](https://skypark-redesign.vercel.app/).
 
-Made with next, react, tailwindcss. Designed by me using figma. Did all of this after watching a design tutorial on [youtube](https://www.youtube.com/watch?v=j6Ule7GXaRs).
+Made with next, react, tailwindcss and formspree for handling contact form. Designed by me using figma. Did all of this after watching a design tutorial on [youtube](https://www.youtube.com/watch?v=j6Ule7GXaRs).
 
 ![localhost_3000_](https://github.com/AuJezus/skypark-redesign/assets/72869217/836cdeb8-63a2-4426-bddd-313fab483669)
 
